@@ -37,7 +37,34 @@ function index() {
     })
 
 }
-    
+    function getEngineer() {
+        inquirer,prompt({
+            {
+                type:"input",
+                name: "engineerName",
+                message: "What is your engineer's name?"
+            },
+            {
+                type:"input",
+                name: "engineerEmail",
+                message: "What is your Id"
+            },
+            {
+                type: "input",
+                name: "managerEmail",
+                message: "What is your Email?"
+            },
+            {
+                type: "input",
+                name: "engineergitHub",
+                message: "What is your engineer's Github username?"
+            }
+        }).then(response => {
+            const engineer = new Engineer(response.engineerName, response.engineerId, response.managerEmail, response.github);
+            teamMember.push(engineer);
+            addingnewMember();
+        })
+    }
 
 
 
