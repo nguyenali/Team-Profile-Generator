@@ -90,7 +90,33 @@ function index() {
         })
     }
 
-    function
-
+    function addingnewMember(){
+        inquirer.prompt([
+            {
+                type: "checklist",
+                name: "selectemployees",
+                message: "which employee?",
+                choices:[
+                    "intern",
+                    "engineer",
+                    "manager"
+                    "finished"
+                ]
+            }
+        ]).then(response => {
+            const position = response.selectemployees;
+            if(position == "intern"){
+                getIntern();
+            } else if (position == "engineer"){
+                getEngineer();
+            } else if (position == "manager"){
+                getManager();
+            } else if (position == "finished"){
+                createTeam();
+            }
+        });
+    }
+    addingnewMember()
 
 }
+   
