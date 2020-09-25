@@ -2,6 +2,7 @@ const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Employee");
 const Intern = require("./lib/Intern");
 const inquirer =require("inquirer");
+const { fstat } = require("fs");
 
 
 
@@ -119,4 +120,8 @@ function index() {
     addingnewMember()
 
 }
+    function createTeam() {
+        fs.writeFileSync(outputPath, render(teamMember), "utf-8");
+    }
    
+    app();
