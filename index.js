@@ -2,7 +2,7 @@ const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Employee");
 const Intern = require("./lib/Intern");
 const inquirer =require("inquirer");
-const { fstat } = require("fs");
+const fs = require("fs");
 
 
 
