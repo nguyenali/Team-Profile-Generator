@@ -124,8 +124,6 @@ class App {
             }
         }
     
-
-}
         renderHTML() {
             fs.readFile('main.html', 'utf8', (err, htmlString) => {
 
@@ -157,20 +155,46 @@ class App {
                         iconClass = `user-graduate`;
                         break;
                 }
-            })
-        }
+            
 
+        var cardScript = `
+        <script>
+        var col = $('<div class="col-4">');
+        var card = $('<div class="card mx-auto border-info mb-3" style="max-width: 18rem;">');
+        var header1 = $('<div class="card-header text-center h4">');
+        header1.text("${e.getName()}");
+        var header2 = $('<div class="card-header text-center">');
+        var icon = $('<i class="fas fa-${iconClass}">');
+        header2.text(" ${e.getRole()}");
+        header2.prepend(icon);
+        var cardBody = $('<div class="card-body text-info">');
+        var cardTitle = $('<h5 class="card-title">');
+        cardTitle.text("Employee Information:");
+        var cardText = $('<p class="card-text">');
+        cardText.text("ID: ${e.getId()}");
+        var cardText2 = $('<p class="card-text">');
+        cardText2.text("Email: ${e.getEmail()}");
+        var cardText3 = $('<p class="card-text">');
+        cardText3.text("${field}");
+        cardBody.append(cardTitle);
+        cardBody.append(cardText);
+        cardBody.append(cardText2);
+        cardBody.append(cardText3);
 
+        card.append(header1);
+        card.append(header2);
+        card.append(cardBody);
+        col.append(card);
+        $("#cards").append(col);    
+        </script>        
+        `;
+        scripts += cardScript;
 
+     });
 
-
-
-
-    addingnewMember()
+        return scripts;
+    }
 
 }
-    function createTeam() {
-        fs.writeFileSync(outputPath, render(teamMember), "utf-8");
-    }
-   
-    app();
+
+module.exports = App;
