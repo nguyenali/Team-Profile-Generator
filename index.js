@@ -48,12 +48,37 @@ class App {
         this.internPrompt = this.employeePrompt.concat([
             {
                 type: "input",
-                message: "Whati is your school?",
+                message: "What is your school?",
                 name: "School"
             }
         ]);
 
+        //start app
 
+        start() {
+            this.nextEmployee();
+        }
+
+        //end app
+        end() {
+            console.log(Team Profile Generated);
+        }
+
+        
+        promptRole() {
+            return inquirer.prompt([
+                {
+                    type: "list",
+                    name: "position",
+                    message: "Enter your position",
+                    choices: ["Intern", "Engineer", "Manager", "Done"]
+                }
+            ]).then(function(data) {
+                return(data.position);
+            }).catch(function(error) {
+                console.log(error);
+            });
+        }
 
 
     ]).then(response => {
