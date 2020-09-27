@@ -3,12 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+      <!-- Bootstrap CSS  -->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+      <!-- Font Awesome CSS Icons -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+      <!-- My stylesheets -->
+      <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+      <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+
+
     <title>Team Profile Generator</title>
 </head>
 <body>
     <div class="container" id="team"> 
         <div class="row">
-            <div class="col">
+            <div class="col-12 text-center bg-info my 5 py 5 display -4 text-white">
 
             </div>
         </div>
@@ -17,5 +30,40 @@
         </div>
     </div>
     
+
+<!--jQuery JS-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script>
+        val col = $('<div class ="col-4">');
+        var card = $('<div class="card mx-auto border-info mb-3" style="max-width: 18rem;">');
+        var header1 = $('<div class = "card-header text-center h4">');
+        header1.text("Sample");
+        var header2 = $('<div class= "card-header text-center">');
+        var icon = $('<i class = "fas fa-users">');
+        header2.text('Manager');
+        header2.prepend(icon);
+
+        var cardBody = $('div class = "card-body text-info">');
+        var cardTitle = $('<h5 class = "card-title">');
+        cardTitle.text("Empyee Information:");
+        cardText.text("ID:001");
+        var cardText2 =$('<p class ="card-text">');
+        cardText2.text("Email: email@gmail.com");
+        var cardText3 = $('<p class="card-text">');
+        cardText3.text("Office #: 345");
+        cardBody.append(cardTitle);
+        cardBody.append(cardText);
+        cardBody.append(cardText2);
+        cardBody.append(cardText3);
+
+        card.append(header1);
+        card.append(header2);
+        card.append(cardBody);
+        col.append(card);
+        $("#cards").append(col); 
+    
+    </script>
+
 </body>
 </html>
