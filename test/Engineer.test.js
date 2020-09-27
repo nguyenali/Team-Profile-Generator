@@ -1,6 +1,6 @@
 const Engineer = require("../lib/Engineer");
 
-test("Can get Github aacount via constructor", () => {
+test("Can set Github aacount via constructor", () => {
     const testValue = "githubUser";
     const e = new Engineer("Foo", 1, "test@test.com", testValue);
     expect(e.github).toBe(testValue);
