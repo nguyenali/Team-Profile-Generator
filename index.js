@@ -64,7 +64,33 @@ class App {
             console.log(Team Profile Generated);
         }
 
-        
+
+        nextEmployee() {
+            this.promptRole().then((position) => {
+                if (role ==="Exit") {
+                    this.renderHTML();
+                    this.end();
+                }
+                else {
+                this.promptInfo(position).then(data) => {
+                    switch(position) {
+                        case: "Manager":
+                            this.employees.push(new Manager(data.name, data.id, data.email, data.officeNumber));
+                            break;
+                        case: "Engineer":
+                            this.employee.push(new Engineer(data.name, data.id, data.email,data.github));
+                            break;
+                        case: "Intern":
+                            this.employee,push(new Intern(data.name, data.id, data.email, data.school));
+                            break;
+                    }
+                    this.nextEmployee();
+                });
+            }
+        });
+    }
+
+
         promptRole() {
             return inquirer.prompt([
                 {
@@ -81,11 +107,7 @@ class App {
         }
 
 
-    ]).then(response => {
-        const manager = new Manager(response.managerName, response.managerId, response.managerEmail, response.managerofficeNumber);
-        teamMember.push(manager);
-        addingnewMember();
-    })
+    
 
 }
     function getEngineer() {
