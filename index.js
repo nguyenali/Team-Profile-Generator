@@ -1,36 +1,61 @@
+const Employee =require("./lib/Employee")
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Employee");
 const Intern = require("./lib/Intern");
 const inquirer =require("inquirer");
 const fs = require("fs");
+const { concat } = require("rxjs");
+//rememebr to add in bracket at the end
+class App {
+
+    constructor() {
+
+        this.employees = [];
+// add in bracket at the end
+        this.employeePrompt[
+            {
+                type:"input",
+                name: "Name",
+                message: "What is your name?"
+            },
+            {
+                type: "input",
+                name: "Id",
+                message: "What is your Id?"
+            },
+            {
+                type: "input",
+                name: "Email",
+                message: "What is your Email?"
+            }
+   
+        ];
+        this.managerPrompt = this.employeePrompt,concat([
+            {
+                type: "input",
+                name: "Office Number",
+                message: "What is your office number?",
+        
+            }
+        ]);
+        this.engineerPrompt = this.employeePrompt.concat([
+            {
+                type: "input",
+                message: "What is your github?",
+                name: "github"
+            }
+        ]);
+        this.internPrompt = this.employeePrompt.concat([
+            {
+                type: "input",
+                message: "Whati is your school?",
+                name: "School"
+            }
+        ]);
 
 
 
-const teamMember = [];
 
-function index() {
-    function getManager(){
-    inquirer.prompt([
-    {
-        type:"input",
-        name: "managerName",
-        message: "What is your Manager's name?"
-    },
-    {
-        type: "input",
-        name: "managerId",
-        message: "What is your Id?"
-    },
-    {
-        type: "input",
-        name: "managerEmail",
-        message: "What is your Email?"
-    },
-    {
-        type:'input',
-        name:"managerofficeNumber",
-        message: "What is the office number for the manageer?"
-    }
     ]).then(response => {
         const manager = new Manager(response.managerName, response.managerId, response.managerEmail, response.managerofficeNumber);
         teamMember.push(manager);
