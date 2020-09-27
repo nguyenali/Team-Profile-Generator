@@ -126,57 +126,26 @@ class App {
     
 
 }
-   
-    function getIntern() {
-        inquirer.prompt([
-            {
-                type: "input",
-                name: "internName",
-                message: "What is your intern's name"
-            },
-            {
-                type: "input",
-                name: "internId",
-                message: "What is your Id"
-            },
-            {
-                type: "input",
-                name: "school",
-                message: "What school does your intern go to?"
-            }
-        ]).then(response => {
-            const intern = new Intern(response.internName, response.internId, response.internSchool);
-            teamMember.push(intern);
-            addingnewMember();
-        })
-    }
+        renderHTML() {
+            fs.readFile('main.html', 'utf8', (err, htmlString) => {
 
-    function addingnewMember(){
-        inquirer.prompt([
-            {
-                type: "checklist",
-                name: "selectemployees",
-                message: "which employee?",
-                choices:[
-                    "intern",
-                    "engineer",
-                    "manager",
-                    "finished"
-                ]
-            }
-        ]).then(response => {
-            const position = response.selectemployees;
-            if(position == "intern"){
-                getIntern();
-            } else if (position == "engineer"){
-                getEngineer();
-            } else if (position == "manager"){
-                getManager();
-            } else if (position == "finished"){
-                createTeam();
-            }
-        });
-    }
+                htmlString =htmlString.split("<script></script>").join(this.getScript());
+
+                fs.writeFile('index.html', htmlString, (err) => {
+                    if(err) throw err;
+                    console.log('HTML created');
+                });
+            });
+        }
+
+
+
+
+
+
+
+
+
     addingnewMember()
 
 }
