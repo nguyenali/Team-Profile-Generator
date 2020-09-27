@@ -9,11 +9,11 @@ const fs = require("fs");
 const teamMember = [];
 
 function index() {
-    function getManager()[
-    inquirer.prompt({
+    function getManager(){
+    inquirer.prompt([
     {
         type:"input",
-        name: "managerName";
+        name: "managerName",
         message: "What is your Manager's name?"
     },
     {
@@ -31,11 +31,11 @@ function index() {
         name:"managerofficeNumber",
         message: "What is the office number for the manageer?"
     }
-    }).then(response => {
+    ]).then(response => {
         const manager = new Manager(response.managerName, response.managerId, response.managerEmail, response.managerofficeNumber);
         teamMember.push(manager);
         addingnewMember();
-    ])
+    })
 
 }
     function getEngineer() {
@@ -100,7 +100,7 @@ function index() {
                 choices:[
                     "intern",
                     "engineer",
-                    "manager"
+                    "manager",
                     "finished"
                 ]
             }
