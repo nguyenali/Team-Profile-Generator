@@ -139,6 +139,26 @@ class App {
         }
 
 
+        getScript() {
+
+            var scripts = ``;
+            this.employees.forEach(e => {
+                var field = "";
+                var iconClass = "";
+                switch (e.getRole()) {
+                    case "Manager":
+                        field = `Office #: ${e.getofficeNumber()}`;
+                        iconClass = `users`;
+                        break;
+                    case "Engineer":
+                        field = `Github: ${e.getGithub()}`;
+                    case "Intern":
+                        field = `School: ${e.getSchool()}`;
+                        iconClass = `user-graduate`;
+                        break;
+                }
+            })
+        }
 
 
 
