@@ -21,8 +21,8 @@
 <body>
     <div class="container" id="team"> 
         <div class="row">
-            <div class="col-12 text-center bg-info my 5 py 5 display -4 text-white">
-
+            <div class="col-12 text-center bg-success my-5 py-5 display-4 text-black">
+                Team Profile
             </div>
         </div>
         <div class="row" id="cards">
@@ -35,23 +35,24 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <script>
-        val col = $('<div class ="col-4">');
-        var card = $('<div class="card mx-auto border-info mb-3" style="max-width: 18rem;">');
-        var header1 = $('<div class = "card-header text-center h4">');
-        header1.text("Sample");
+          var col = $('<div class = "col-4">');
+        var card = $('<div class= "card mx auto border-success mb-3" style="max-width: 18rem;">');
+        var header1 = $('<div class= "card-header text-center h4">');
+        header1.text("Tristian Tompson");
         var header2 = $('<div class= "card-header text-center">');
         var icon = $('<i class = "fas fa-users">');
-        header2.text('Manager');
+        header2.text("Manager");
         header2.prepend(icon);
 
-        var cardBody = $('div class = "card-body text-info">');
-        var cardTitle = $('<h5 class = "card-title">');
-        cardTitle.text("Empyee Information:");
-        cardText.text("ID:001");
-        var cardText2 =$('<p class ="card-text">');
-        cardText2.text("Email: email@gmail.com");
+        var cardBody = $('<div class="card-body text-success">');
+        var cardTitle = $('<h5 class="card-title">');
+        cardTitle.text("Manager Information:");
+        var cardText = $('<p class="card-text">');
+        cardText.text("ID: 001");
+        var cardText2 = $('<p class="card-text">');
+        cardText2.text("Email: tompson@gmail.com");
         var cardText3 = $('<p class="card-text">');
-        cardText3.text("Office #: 345");
+        cardText3.text("Office #: 510");
         cardBody.append(cardTitle);
         cardBody.append(cardText);
         cardBody.append(cardText2);
@@ -61,13 +62,13 @@
         card.append(header2);
         card.append(cardBody);
         col.append(card);
-        $("#cards").append(col); 
+        $("#cards").append(col);   
     
     </script>
 
     <script>
         var col = $('<div class = "col-4">');
-        var card = $('<div class= "card mx auto border-info mb-3" style="max-width: 18rem;">');
+        var card = $('<div class= "card mx auto border-success mb-3" style="max-width: 18rem;">');
         var header1 = $('<div class= "card-header text-center h4">');
         header1.text("Damion Larry");
         var header2 = $('<div class= "card-header text-center">');
@@ -75,7 +76,7 @@
         header2.text("Engineer");
         header2.prepend(icon);
 
-        var cardBody = $('<div class="card-body text-info">');
+        var cardBody = $('<div class="card-body text-success">');
         var cardTitle = $('<h5 class="card-title">');
         cardTitle.text("Employee Information:");
         var cardText = $('<p class="card-text">');
@@ -98,7 +99,7 @@
 
     <script>
         var col = $('<div class="col-4">');
-        var card = $('<div class="card mx-auto border-info mb-3" style="max-width: 18rem;">');
+        var card = $('<div class="card mx-auto border-success mb-3" style="max-width: 18rem;">');
         var header1 = $('<div class="card-header text-center h4">');
         header1.text("Victor Stone");
         var header2 = $('<div class="card-header text-center">');
@@ -106,7 +107,7 @@
         header2.text(" Intern");
         header2.prepend(icon);
 
-        var cardBody = $('<div class="card-body text-info">');
+        var cardBody = $('<div class="card-body text-success">');
         var cardTitle = $('<h5 class="card-title">');
         cardTitle.text("Employee Information:");
         var cardText = $('<p class="card-text">');
@@ -127,6 +128,13 @@
         col.append(card);
         $("#cards").append(col);
     </script>
+
+    <!-- Bootstrap -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <!-- Moment.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 
 </body>
 </html>
