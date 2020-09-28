@@ -1,4 +1,7 @@
 # Team-Profile-Generator
+
+<img width="1419" alt="Screen Shot 2020-09-27 at 6 51 07 PM" src="https://user-images.githubusercontent.com/67357469/94383095-e725d000-00f3-11eb-8b23-6562b1da3d29.png">
+
 ## Purpose:
 
 A generator using Node.js and OOP to create a Team Profile page.
