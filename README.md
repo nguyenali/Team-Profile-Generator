@@ -1,7 +1,7 @@
 # Team-Profile-Generator
 ## Purpose:
 
-A generator using Node.js to create professional READme document.
+A generator using Node.js and OOP to create a Team Profile page.
 
 
 ## Developers:
@@ -9,7 +9,7 @@ A generator using Node.js to create professional READme document.
 
 ## Technology and Applications used:
 * node.js
-* Json
+* OOP
 * JS
 * HTML
 
